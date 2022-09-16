@@ -447,3 +447,19 @@
   447  kubectl rollout resume deployment my-dep 
   448  kubectl get pod
   449  history > cmd.txt
+  450  vi deployment.yaml 
+  451  git add .
+  452  git commit -m "deployment"
+  453  git push origin main 
+  454  kubectl get deployments.apps 
+  455  kubectl scale deployment my-dep --replicas=7
+  456  kubectl get deployments.apps 
+  457  kubectl get pod
+  458  kubectl autoscale deployment my-dep --min 3 --max=10 --cpu-percent 70 --dry-run=client -o yaml
+  459  kubectl autoscale deployment my-dep --min 3 --max=10 --cpu-percent 70 --dry-run=client -o yaml >> deployment.yaml 
+  460  vi deployment.yaml 
+  461  kubectl autoscale deployment my-dep --min 3 --max=10 --cpu-percent 70 
+  462  kubectl get horizontalpodautoscalers.autoscaling 
+  463  kubectl get hpa
+  464  kubectl get pod
+  465  history > cmd.txt 
