@@ -7,14 +7,15 @@ metadata:
 spec:
   containers:
   - name: con1
-    image: nginx:latest
-    ports:
-    - containerPort: 80
-  - name: con2
     image: tomcat:latest
     ports:
     - containerPort: 8080
+  - name: con2
+    image: nginx:latest
+    ports:
+    - containerPort: 80
 
+  restartPolicy: Never
 ---
 apiVersion: v1
 kind: Service
