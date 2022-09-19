@@ -41,7 +41,7 @@ kind: Service
 metadata:
   name: mydep-svc
 spec:
-  type: LoadBalancer
+        #  type: LoadBalancer
   ports:
   - port: 80
     protocol: TCP
