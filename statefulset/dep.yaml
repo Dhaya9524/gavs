@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-   name: mydep-vol
+   name: my-dep
 spec:
    replicas: 3
    selector:
@@ -17,10 +17,16 @@ spec:
           image: nginx:latest
           ports:
           - containerPort: 80
-          volumeMounts:
-          - name: myvol
-            mountPath: /app
-        volumes:
-        - name: myvol
-          persistentVolumeClaim:
-             claimName: mypvc
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: mydep-svc
+spec:
+  ports:
+  - port: 80
+    protocol: TCP
+    targetPort: 80
+  selector:
+    app: myapp
+
