@@ -16,5 +16,5 @@ spec:
         - /bin/sh
         - -c
         - echo HELLO WORLD !!!!!
-      restartPolicy: Never
+          #      restartPolicy: Never
 
