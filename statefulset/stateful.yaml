@@ -1,0 +1,48 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: app-svc
+spec:
+  clusterIP: None
+  ports:
+  - port: 80
+  selector:
+    app: myapp
+
+---
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+   name: app
+spec:
+   serviceName: "app-svc"
+   replicas: 3
+   selector:
+      matchLabels:
+         app: myapp
+   template:
+      metadata:
+         labels:
+            app: myapp
+      spec:
+        containers:
+        - name: con1
+          image: nginx:latest
+          ports:
+          - containerPort: 80
+
+---
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: mystate-svc
+spec:
+        #  type: LoadBalancer
+  ports:
+  - port: 80
+    protocol: TCP
+    targetPort: 80
+  selector:
+    app: myapp
+---
