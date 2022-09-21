@@ -1,0 +1,48 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+   name: my-dep
+spec:
+   replicas: 3
+   selector:
+      matchLabels:
+         app: myapp
+   template:
+      metadata:
+         labels:
+            app: myapp
+      spec:
+        volumes:
+        - name: myvol
+          emptyDir: {}
+        initContainers:
+        - name: icon
+          image: ubuntu:latest
+          command: ["/bin/bash","-c","echo '<h1>i am created by init-container</h1>' > /data/index.html"]
+          volumeMounts:
+          - name: myvol
+            mountPath: /data
+
+        containers:
+        - name: con1
+          image: nginx:latest
+          ports:
+          - containerPort: 80
+          volumeMounts:
+          - name: myvol
+            mountPath: /usr/share/nginx/html/
+
+---
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: mydep-svc
+spec:
+  type: LoadBalancer
+  ports:
+  - port: 80
+    protocol: TCP
+    targetPort: 80
+  selector:
+    app: myapp
