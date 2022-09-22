@@ -1,0 +1,1000 @@
+  825  vi cronjob.yaml
+  826  kubectl create -f cronjob.yaml 
+  827  kubectl get cronjobs.batch 
+  828  kubectl get pod
+  829  kubectl delete -f job.yaml 
+  830  kubectl get pod
+  831  kubectl get cronjobs.batch 
+  832  kubectl get pod
+  833  kubectl logs cronjob-hello-27727644-8qpc8 
+  834  kubectl get cronjobs.batch 
+  835  kubectl get pod
+  836  vi cronjob.yaml 
+  837  git add .
+  838  git commit -m "job n cron job"
+  839  git push origin main 
+  840  vi job.yaml 
+  841  kubectl create -f job.yaml 
+  842  vi job.yaml 
+  843  history >> cmd-20-9-22.txt 
+  844  git add .
+  845  git commit -m "history"
+  846  git push origin main 
+  847  cd
+  848  kubectl get pod
+  849  kubectl delete -f myapp/cronjob.yaml 
+  850  kubectl get pod
+  851  kubectl get svc
+  852  vi adapter.yaml
+  853  cd myapp/
+  854  ls
+  855  vi deployment
+  856  vi deployment.yaml 
+  857  mkdir pattern
+  858  cd pattern/
+  859  cp ../emptydir-dep.yaml sidecar.yaml
+  860  vi sidecar.yaml 
+  861  kubectl get pod
+  862  kubectl create -f sidecar.yaml 
+  863  kubectl get pod
+  864  kubectl describe pod my-dep-7fb4c5ccd7-crnwh
+  865  kubectl get pod
+  866  kubectl get pod -o wide
+  867  kubectl exec -it my-dep-7fb4c5ccd7-crnwh -c con1 -- bash
+  868  kubectl exec -it my-dep-7fb4c5ccd7-crnwh -c con2 -- bash
+  869  vi sidecar.yaml 
+  870  kubectl exec -it my-dep-7fb4c5ccd7-crnwh -c con2 -- bash
+  871  vi sidecar.yaml 
+  872  vi adapter.yaml
+  873  kubectl delete -f sidecar.yaml 
+  874  vi adapter.yaml 
+  875  kubectl create -f adapter.yaml 
+  876  kubectl get pod
+  877  vi adapter.yaml 
+  878  kubectl exec -it adapter -c adapter-container -- bash
+  879  kubectl exec -it adapter -c adapter-container -- sh
+  880  ls
+  881  cp sidecar.yaml ambassador.yaml
+  882  vi ambassador.yaml 
+  883  kubectl create -f ambassador.yaml 
+  884  kubectl get pod
+  885  kubectl delete -f adapter.yaml 
+  886  kubectl get pod
+  887  kubectl get svc
+  888  kubectl delete -f ambassador.yaml 
+  889  vi ambassador.yaml 
+  890  kubectl create -f ambassador.yaml 
+  891  kubectl get pod
+  892  kubectl describe pod my-dep-85d9798f6c-ddqxg 
+  893  vi ambassador.yaml 
+  894  kubectl apply -f ambassador.yaml 
+  895  kubectl describe pod my-dep-85d9798f6c-ddqxg 
+  896  kubectl get pod
+  897  kubectl describe pod my-dep-85d9798f6c-k2l8n
+  898  kubectl delete deployments.apps my-dep 
+  899  kubectl get deployments.apps 
+  900  vi ambassador.yaml 
+  901  kubectl apply -f ambassador.yaml 
+  902  kubectl get pod
+  903  vi ambassador.yaml 
+  904  kubectl delete deployments.apps my-dep 
+  905  kubectl apply -f ambassador.yaml 
+  906  kubectl get pod
+  907  kubectl exec -it my-dep-9649848f5-7qjn8 -- bash
+  908  kubectl delete deployments.apps my-dep 
+  909  vi ambassador.yaml 
+  910  exit
+  911  cd myapp/
+  912  cd am
+  913  cd pattern/
+  914  ls
+  915  rm test-docker.sh  
+  916  sh get-docker.sh 
+  917  docker pull 966145/nginx-rev:latest
+  918  docker history 966145/nginx-rev:latest 
+  919  docker rmi 966145/nginx-rev:latest 
+  920  mkdir ambassador
+  921  cd ambassador/
+  922  ls
+  923  vi Dockerfile
+  924  vi nginx.conf
+  925  docker build -t 966145/nginx:rev .
+  926  docker images
+  927  docker history 966145/nginx:rev 
+  928  docker login 
+  929  docker push 966145/nginx:rev 
+  930  cd ..
+  931  kubectl get pod
+  932  vi ambassador
+  933  ls
+  934  vi ambassador.yaml 
+  935  kubectl apply -f ambassador.yaml 
+  936  kubectl get pod
+  937  kubectl describe pod my-dep-88d49d8b9-44x68
+  938  kubectl delete -f ambassador.yaml 
+  939  vi ambassador.yaml 
+  940  kubectl create -f ambassador.yaml 
+  941  kubectl get pod
+  942  kubectl get svc
+  943  vi ambassador.yaml 
+  944  kubectl get pod
+  945  kubectl get svc
+  946  vi ambassador.yaml 
+  947  kubectl delete -f ambassador.yaml 
+  948  vi ambassador.yaml 
+  949  kubectl create -f ambassador.yaml 
+  950  kubectl get pod
+  951  kubectl get svc
+  952  vi ambassador.yaml 
+  953  git add .
+  954  cd ..
+  955  git add .
+  956  git commit -m "container pattern"
+  957  git push origin 
+  958  cd pattern/
+  959  vi ambassador.yaml 
+  960  kubectl get pod
+  961  vi ambassador.yaml 
+  962  cd ..
+  963  cp emptydir-dep.yaml init-container.yaml
+  964  vi init-container.yaml 
+  965  kubectl get pod
+  966  kubectl delete deployments.apps my-dep 
+  967  kubectl get svc
+  968  kubectl delete svc mydep-svc 
+  969  vi init-container.yaml 
+  970  kubectl create -f init-container.yaml 
+  971  kubectl get pod
+  972  kubectl get svc
+  973  vi init-container.yaml 
+  974  kubectl get pod
+  975  kubectl get SVC
+  976  kubectl get svc
+  977  vi init-container.yaml 
+  978  kubectl delete -f init-container.yaml 
+  979  cd
+  980  git clone https://github.com/nginxinc/kubernetes-ingress.git --branch v2.3.1
+  981  ls
+  982  cd kubernetes-ingress/
+  983  ls
+  984  kubectl apply -f common/ns-and-sa.yaml
+  985  cd deployments/
+  986  kubectl apply -f common/ns-and-sa.yaml
+  987  kubectl apply -f rbac/rbac.yaml
+  988  kubectl apply -f common/default-server-secret.yamlkubectl apply -f common/default-server-secret.yaml
+  989  kubectl apply -f common/default-server-secret.yaml
+  990  kubectl apply -f common/nginx-config.yaml
+  991  kubectl apply -f common/ingress-class.yaml
+  992  kubectl apply -f common/crds/k8s.nginx.org_virtualservers.yaml
+  993  kubectl apply -f common/crds/k8s.nginx.org_virtualserverroutes.yaml
+  994  kubectl apply -f common/crds/k8s.nginx.org_globalconfigurations.yaml
+  995  kubectl apply -f deployment/appprotect-dos-arb.yaml
+  996  kubectl apply -f service/appprotect-dos-arb-svc.yaml
+  997  kubectl get pods --namespace=nginx-ingress
+  998  kubectl apply -f service/loadbalancer.yaml
+  999  kubectl get ingress
+ 1000  kubectl get svc
+ 1001  kubectl get ingress -n nginx-ingress 
+ 1002  kubectl get svc -n nginx-ingress 
+ 1003  kubectl describe svc nginx-ingress -n nginx-ingress
+ 1004  kubectl get svc -n nginx-ingress 
+ 1005  kubectl describe svc nginx-ingress -n nginx-ingress
+ 1006  kubectl delete -f service/
+ 1007  kubectl delete -f .
+ 1008  kubectl delete -f common/
+ 1009  kubectl delete -f common/crds/
+ 1010  kubectl get ns
+ 1011  kubectl get svc
+ 1012  kubectl get ingress
+ 1013  cd 
+ 1014  cd myapp/
+ 1015  ls
+ 1016  cp deployment.yaml  ingress.yaml
+ 1017  vi ingress.yaml 
+ 1018  kubectl create -f ingress.yaml 
+ 1019  kubectl get pod
+ 1020  kubectl get svc
+ 1021  kubectl get ingress
+ 1022  kubectl get svc
+ 1023  kubectl get svc -n kube-system 
+ 1024  kubectl get pod
+ 1025  kubectl delete -f ingress.yaml 
+ 1026  vi ingress.yaml 
+ 1027  kubectl replace -f ingress.yaml 
+ 1028  kubectl delete -f ingress.yaml 
+ 1029  kubectl create -f ingress.yaml 
+ 1030  kubectl get pod
+ 1031  kubectl get ing
+ 1032  kubectl get svc -n kube-system 
+ 1033  kubectl delete -f ingress.yaml 
+ 1034  vi ingress.yaml 
+ 1035  kubectl create -f ingress.yaml 
+ 1036  kubectl get pod
+ 1037  kubectl get ingress
+ 1038  kubectl get pod
+ 1039  kubectl get ingress
+ 1040  kubectl get svc
+ 1041  kubectl get ingress
+ 1042  kubectl delete -f ingress.yaml 
+ 1043  vi ingress.yaml 
+ 1044  kubectl create -f ingress.yaml 
+ 1045  mkdir network-rules
+ 1046  cd network-rules/
+ 1047  cp ../wp/* .
+ 1048  ls
+ 1049  vi wordpress.yaml 
+ 1050  vi mysql.yml 
+ 1051  kubectl get ns 
+ 1052  ls
+ 1053  cp wordpress.yaml wp-2.yaml
+ 1054  vi wp-2.yaml 
+ 1055  kubectl create -f .
+ 1056  cd myapp/
+ 1057  cd network-rules/
+ 1058  ls
+ 1059  vi mysql.yml 
+ 1060  kubectl get pod
+ 1061  kubectl delete deployments.apps my-dep 
+ 1062  kubectl get pod
+ 1063  kubectl get svc
+ 1064  kubectl describe svc wordpress-svc-2
+ 1065  kubectl get svc
+ 1066  kubectl delete -f wp-2.yaml 
+ 1067  kubectl get pod
+ 1068  kubectl get svc
+ 1069  kubectl create -f wp-2.yaml 
+ 1070  kubectl get pod
+ 1071  kubectl get svc
+ 1072  kubectl edit pod wordpress
+ 1073  kubectl edit pod wordpress-2 
+ 1074  kubectl delete pod wordpress-2 
+ 1075  vi wp-2.yaml 
+ 1076  kubectl apply -f wp-2.yaml 
+ 1077  kubectl get pod
+ 1078  kubectl get svc
+ 1079  vi net.yaml
+ 1080  vi mysql.yml 
+ 1081  vi net.yaml
+ 1082  vi mysql.yml 
+ 1083  vi net.yaml
+ 1084  vi wordpress.yaml 
+ 1085  vi net.yaml
+ 1086  kubectl create -f net.yaml 
+ 1087  kubectl get networkpolicies.
+ 1088  kubectl delete -f net.yaml 
+ 1089  cd ..
+ 1090  git add .
+ 1091  history >> cmd-21-9-22.txt
+ 1092  cd myapp/
+ 1093  git add .
+ 1094  git commit -m "ingress network polices"
+ 1095  git push origin main 
+ 1096  kubectl get pod
+ 1097  cd network-rules/
+ 1098  kubectl delete -f .
+ 1099  kubectl get pod
+ 1100  kubectl get svc
+ 1101  cd ..
+ 1102  kubectl delete svc wordpress-svc-1
+ 1103  kubectl get svc
+ 1104  kubectl delete svc mydep-svc
+ 1105  kubectl get svc
+ 1106  kubectl get pod
+ 1107  vi ingress.yaml 
+ 1108  kubectl create -f ingress.yaml 
+ 1109  kubectl delete -f ingress.yaml 
+ 1110  kubectl create -f ingress.yaml 
+ 1111  kubectl get pod
+ 1112  kubectl get svc
+ 1113  kubectl get ing
+ 1114  kubectl get svc -n kube-system 
+ 1115  kubectl delete -f ingress.yaml 
+ 1116  kubectl get svc -n kube-system 
+ 1117  kubectl describe ingress addon-http-application-routing-nginx-ingress
+ 1118  kubectl get svc -n kube-system 
+ 1119  kubectl describe ingress addon-http-application-routing-nginx-ingress  -n kube-system
+ 1120  kubectl get svc -n kube-system 
+ 1121  kubectl describe svc addon-http-application-routing-nginx-ingress  -n kube-system
+ 1122  kubectl get svc -n kube-system 
+ 1123  kubectl describe svc addon-http-application-routing-nginx-ingress  -n kube-system
+ 1124  kubectl get svc -n kube-system 
+ 1125  kubectl delete svc addon-http-application-routing-nginx-ingress  -n kube-system
+ 1126  kubectl get svc -n kube-system 
+ 1127  kubectl delete svc addon-http-application-routing-nginx-ingress  -n kube-system
+ 1128  kubectl get svc -n kube-system 
+ 1129  kubectl get ingresa -n kube-system 
+ 1130  kubectl get ingress -n kube-system 
+ 1131  kubectl get svc 
+ 1132  kubectl get ingress -n kube-system 
+ 1133  kubectl get svc -n kube-system 
+ 1134  kubectl describe svc addon-http-application-routing-nginx-ingress -n kube-system 
+ 1135  kubectl get svc 
+ 1136  kubectl get svc -n kube-system 
+ 1137  kubectl describe svc addon-http-application-routing-nginx-ingress -n kube-system 
+ 1138  cd
+ 1139  git clone https://github.com/akharis76/aks-efk-ingress.git
+ 1140  ls
+ 1141  rm -rf kubernetes-ingress/
+ 1142  ls
+ 1143  cd aks-efk-ingress/
+ 1144  kubectl create namespace "kube-logging"
+ 1145  kubectl create -f efk/
+ 1146  vi ../myapp/ingress.yaml 
+ 1147  vi efk/kibana-ingress.yaml 
+ 1148  kubectl create -f efk/kibana-ingress.yaml 
+ 1149  vi efk/kibana-ingress.yaml 
+ 1150  vi ../myapp/ingress.yaml 
+ 1151  vi efk/kibana-ingress.yaml 
+ 1152  kubectl create -f efk/kibana-ingress.yaml 
+ 1153  kubectl get svc
+ 1154  kubectl get svc -n kube-logging 
+ 1155  vi efk/kibana-ingress.yaml 
+ 1156  kubectl create -f efk/kibana-ingress.yaml 
+ 1157  vi efk/kibana-ingress.yaml 
+ 1158  kubectl create -f efk/kibana-ingress.yaml 
+ 1159  vi efk/kibana-ingress.yaml 
+ 1160  vi ../myapp/ingress.yaml 
+ 1161  vi efk/kibana-ingress.yaml 
+ 1162  kubectl create -f efk/kibana-ingress.yaml 
+ 1163  kubectl get svc -n kube-logging 
+ 1164  kubectl get svc
+ 1165  kubectl get ing
+ 1166  kubectl get svc -n kube-system 
+ 1167  kubectl rollout status sts/es-cluster --namespace=kube-logging
+ 1168  kubectl get sts/es-cluster --namespace=kube-logging
+ 1169  kubectl get pod --namespace=kube-logging
+ 1170  kubectl get svc -n kube-system 
+ 1171  kubectl describe svc addon-http-application-routing-nginx-ingress -n kube-system
+ 1172  cd 
+ 1173  ls
+ 1174  rm -rf .kube/
+ 1175  az account set --subscription 9d961eed-6081-469d-97a9-d7e41fe57e4b
+ 1176  az aks get-credentials --resource-group newkube --name newk8s
+ 1177  kubectl get nodes
+ 1178  kubectl get svc -n kube-system 
+ 1179  cd myapp/
+ 1180  vi ingress.yaml 
+ 1181  kubectl create -f ingress.yaml 
+ 1182  kubectl get svc -n kube-system 
+ 1183  kubectl get svc 
+ 1184  kubectl get pod
+ 1185  kubectl get ingress
+ 1186  vi ingress.yaml 
+ 1187  cd 
+ 1188  vi aks-efk-ingress/efk/kibana-ingress.yaml 
+ 1189  vi ingress.yaml 
+ 1190  cd myapp/
+ 1191  vi ingress.yaml 
+ 1192  kubectl delete -f ingress.yaml 
+ 1193  kubectl get ingress
+ 1194  kubectl create -f ingress.yaml 
+ 1195  kubectl get ingress
+ 1196  kubectl delete -f ingress.yaml 
+ 1197  vi ingress.yaml 
+ 1198  kubectl create -f ingress.yaml 
+ 1199  vi ingress.yaml 
+ 1200  kubectl create -f ingress.yaml 
+ 1201  kubectl get ingress
+ 1202  kubectl delete -f ingress.yaml 
+ 1203  vi ingress.yaml 
+ 1204  kubectl create -f ingress.yaml 
+ 1205  kubectl delete -f ingress.yaml 
+ 1206  vi ingress.yaml 
+ 1207  kubectl create -f ingress.yaml 
+ 1208  kubectl get pod 
+ 1209  kubectl get ing 
+ 1210  kubectl delete -f ingress.yaml 
+ 1211  vi ingress.yaml 
+ 1212  cd
+ 1213  kubectl get ingress
+ 1214  kubectl get svc -n kube-system 
+ 1215  vi ing.yaml
+ 1216  kubectl create -f ing.yaml 
+ 1217  vi ing.yaml
+ 1218  kubectl delete -f ing.yaml 
+ 1219  kubectl create -f ing.yaml 
+ 1220  kubectl get ing
+ 1221  kubectl get svc
+ 1222  kubectl get svc -n kube-system 
+ 1223  kubectl delete -f ing.yaml 
+ 1224  vi ing.yaml
+ 1225  kubectl create -f ing.yaml 
+ 1226  kubectl get svc -n kube-system 
+ 1227  kubectl get svc
+ 1228  kubectl get pod
+ 1229  vi ing.yaml
+ 1230  kubectl delete -f ing.yaml 
+ 1231  vi ing.yaml
+ 1232  kubectl create -f ing.yaml 
+ 1233  kubectl get svc -n kube-system 
+ 1234  vi ing.yaml
+ 1235  kubectl delete -f ing.yaml 
+ 1236  vi ing.yaml 
+ 1237  kubectl delete -f ing.yaml 
+ 1238  kubectl create -f ing.yaml 
+ 1239  kubectl get svc -n kube-system 
+ 1240  kubectl get pod
+ 1241  vi ing.yaml 
+ 1242  kubectl delete -f ing.yaml 
+ 1243  vi ing.yaml 
+ 1244  kubectl create -f ing.yaml 
+ 1245  kubectl delete -f ing.yaml 
+ 1246  vi ing.yaml 
+ 1247  kubectl create -f ing.yaml 
+ 1248  kubectl delete -f ing.yaml 
+ 1249  vi ing.yaml 
+ 1250  kubectl create -f ing.yaml 
+ 1251  kubectl get pod
+ 1252  vi ing.yaml 
+ 1253  kubectl get pod
+ 1254  kubectl exec -it aks-helloworld-65ddbc869b-9m525 -- bash
+ 1255  kubectl delete -f ing.yaml 
+ 1256  vi ing.yaml 
+ 1257  kubectl create -f ing.yaml 
+ 1258  kubectl get pod
+ 1259  kubectl get svc
+ 1260  kubectl get svc -n kube-system 
+ 1261  vi ing.yaml 
+ 1262  kubectl exec -it aks-helloworld-694dfc4f8b-zhczb -- bash
+ 1263  vi ing.yaml 
+ 1264  kubectl delete ingress aks-helloworld 
+ 1265  kubectl apply -f ing.yaml 
+ 1266  kubectl delete -f ing.yaml 
+ 1267  kubectl apply -f ing.yaml 
+ 1268  kubectl delete -f ing.yaml 
+ 1269  vi ing.yaml 
+ 1270  kubectl apply -f ing.yaml 
+ 1271  vi ing.yaml 
+ 1272  kubectl apply -f ing.yaml 
+ 1273  kubectl get ing
+ 1274  vi ing.yaml 
+ 1275  kubectl get pod
+ 1276  kubectl exec -it aks-helloworld-694dfc4f8b-p78x4 -- bash
+ 1277  kubectl get ing
+ 1278  kubectl edit ing aks-helloworld 
+ 1279  vi ing.yaml 
+ 1280  kubectl delete -f ing.yaml 
+ 1281  kubectl apply -f ing.yaml 
+ 1282  kubectl get pod
+ 1283  kubectl get ing
+ 1284  vi ing.yaml 
+ 1285  kubectl delete -f ing.yaml 
+ 1286  kubectl apply -f ing.yaml 
+ 1287  kubectl get ing
+ 1288  kubectl delete -f ing.yaml 
+ 1289  vi ing.yaml 
+ 1290  kubectl delete -f ing.yaml 
+ 1291  kubectl apply -f ing.yaml 
+ 1292  vi ing.yaml 
+ 1293  kubectl delete -f ing.yaml 
+ 1294  vi ing.yaml 
+ 1295  kubectl create -f ing.yaml 
+ 1296  kubectl get ing
+ 1297  kubectl delete -f ing.yaml 
+ 1298  vi ing.yaml 
+ 1299  kubectl create -f ing.yaml 
+ 1300  kubectl get ing
+ 1301  kubectl delete -f ing.yaml 
+ 1302  vi ing.yaml 
+ 1303  kubectl create -f ing.yaml 
+ 1304  vi ing.yaml 
+ 1305  kubectl get ing
+ 1306  vi ing.yaml 
+ 1307  kubectl delete -f ing.yaml 
+ 1308  kubectl create -f ing.yaml 
+ 1309  vi ing.yaml 
+ 1310  kubectl get ing
+ 1311  kubectl delete -f ing.yaml 
+ 1312  kubectl get ing
+ 1313  vi ing.yaml 
+ 1314  kubectl create -f ing.yaml 
+ 1315  kubectl get ing
+ 1316  kubectl delete -f ing.yaml 
+ 1317  vi ing.yaml 
+ 1318  kubectl create -f ing.yaml 
+ 1319  kubectl get ing
+ 1320  kubectl delete -f ing.yaml 
+ 1321  vi ing.yaml 
+ 1322  kubectl get svc -n kube-system 
+ 1323  kubectl get svc
+ 1324  kubectl create -f ing.yaml 
+ 1325  kubectl get pod
+ 1326  kubectl get ingress
+ 1327  vi ing.yaml 
+ 1328  kubectl delete -f ing.yaml 
+ 1329  vi ing.yaml 
+ 1330  kubectl get ingress
+ 1331  kubectl create -f ing.yaml 
+ 1332  kubectl delete -f ing.yaml 
+ 1333  vi ing.yaml 
+ 1334  kubectl delete -f ing.yaml 
+ 1335  kubectl create -f ing.yaml 
+ 1336  kubectl get ingress
+ 1337  vi ing.yaml 
+ 1338  kubectl create -f ing.yaml 
+ 1339  kubectl delete -f ing.yaml 
+ 1340  vi ing.yaml 
+ 1341  kubectl create -f ing.yaml 
+ 1342  kubectl get ingress
+ 1343  vi ing.yaml 
+ 1344  kubectl delete -f ing.yaml 
+ 1345  vi ing.yaml 
+ 1346  kubectl create -f ing.yaml 
+ 1347  kubectl get ingress
+ 1348  kubectl delete -f ing.yaml 
+ 1349  vi ing.yaml 
+ 1350  kubectl create -f ing.yaml 
+ 1351  kubectl get ingress
+ 1352  kubectl delete -f ing.yaml 
+ 1353  vi ing.yaml 
+ 1354  kubectl create -f ing.yaml 
+ 1355  kubectl get ing
+ 1356  vi ing.yaml 
+ 1357  kubectl delete -f ing.yaml 
+ 1358  vi ing.yaml 
+ 1359  kubectl create -f ing.yaml 
+ 1360  kubectl get ing
+ 1361  kubectl delete -f ing.yaml 
+ 1362  vi ing.yaml 
+ 1363  kubectl get ing
+ 1364  vi ing.yaml 
+ 1365  kubectl create -f ing.yaml 
+ 1366  kubectl get pod
+ 1367  kubectl get svc
+ 1368  kubectl get ingress
+ 1369  kubectl exec -it aks-helloworld-694dfc4f8b-nvjts -- bash
+ 1370  kubectl delete -f ing.yaml 
+ 1371  vi ing.yaml 
+ 1372  kubectl create -f ing.yaml 
+ 1373  kubectl get ingress
+ 1374  vi ing.yaml 
+ 1375  kubectl delete -f ing.yaml 
+ 1376  kubectl create -f ing.yaml 
+ 1377  kubectl get ingress
+ 1378  kubectl delete -f ing.yaml 
+ 1379  vi ing.yaml 
+ 1380  kubectl create -f ing.yaml 
+ 1381  kubectl get ingress
+ 1382  kubectl delete -f ing.yaml 
+ 1383  vi ing.yaml 
+ 1384  kubectl create -f ing.yaml 
+ 1385  kubectl get ingress
+ 1386  kubectl delete -f ing.yaml 
+ 1387  vi ing.yaml 
+ 1388  kubectl create -f ing.yaml 
+ 1389  kubectl get ingress
+ 1390  kubectl create -f ing.yaml 
+ 1391  vi ing.yaml 
+ 1392  kubectl create -f ing.yaml 
+ 1393  kubectl delete -f ing.yaml 
+ 1394  vi ing.yaml 
+ 1395  kubectl create -f ing.yaml 
+ 1396  kubectl get ingress
+ 1397  kubectl delete -f ing.yaml 
+ 1398  vi ing.yaml 
+ 1399  kubectl create -f ing.yaml 
+ 1400  kubectl get ingress
+ 1401  kubectl delete -f ing.yaml 
+ 1402  vi ing.yaml 
+ 1403  kubectl create -f ing.yaml 
+ 1404  kubectl get ingress
+ 1405  kubectl delete -f ing.yaml 
+ 1406  kubectl get ingress
+ 1407  kubectl get ingress -n kube-system 
+ 1408  kubectl get svc -n kube-system 
+ 1409  ls
+ 1410  git clone https://github.com/nginxinc/kubernetes-ingress.git --branch v2.3.1
+ 1411  cd kubernetes-ingress/deployments
+ 1412  kubectl apply -f common/ns-and-sa.yaml
+ 1413  kubectl apply -f rbac/rbac.yaml
+ 1414  kubectl apply -f common/default-server-secret.yaml
+ 1415  kubectl apply -f common/nginx-config.yaml
+ 1416  kubectl apply -f common/ingress-class.yaml
+ 1417  kubectl apply -f common/crds/k8s.nginx.org_virtualservers.yaml
+ 1418  kubectl apply -f common/crds/k8s.nginx.org_transportservers.yaml
+ 1419  kubectl apply -f common/crds/k8s.nginx.org_policies.yaml
+ 1420  kubectl apply -f common/crds/k8s.nginx.org_globalconfigurations.yaml
+ 1421  kubectl apply -f deployment/nginx-ingress.yaml
+ 1422  kubectl apply -f service/loadbalancer.yaml
+ 1423  kubectl get svc nginx-ingress --namespace=nginx-ingress
+ 1424  kubectl describe svc nginx-ingress --namespace=nginx-ingress
+ 1425  kubectl get svc nginx-ingress --namespace=nginx-ingress
+ 1426  cd
+ 1427  vi ing.yaml 
+ 1428  kubectl create -f ing.yaml 
+ 1429  kubectl get ing
+ 1430  kubectl get svc nginx-ingress --namespace=nginx-ingress
+ 1431  vi ing.yaml 
+ 1432  kubectl delete -f ing.yaml 
+ 1433  kubectl create -f ing.yaml 
+ 1434  kubectl get ing
+ 1435  vi ing.yaml 
+ 1436  kubectl get ing
+ 1437  vi ing.yaml 
+ 1438  kubectl get ing
+ 1439  kubectl delete -f ing.yaml 
+ 1440  kubectl get ing
+ 1441  kubectl delete -f ing.yaml 
+ 1442  kubectl get ing
+ 1443  kubectl delete ing aks-helloworld 
+ 1444  kubectl get ing
+ 1445  kubectl create -f ing.yaml 
+ 1446  vi ing.yaml 
+ 1447  kubectl create -f ing.yaml 
+ 1448  kubectl get ing
+ 1449  kubectl get pod
+ 1450  vi ing.yaml 
+ 1451  kubectl create -f ing.yaml 
+ 1452  kubectl delete -f ing.yaml 
+ 1453  kubectl create -f ing.yaml 
+ 1454  kubectl get pod
+ 1455  kubectl get ing
+ 1456  kubectl delete -f ing.yaml 
+ 1457  vi ing.yaml 
+ 1458  kubectl delete -f ing.yaml 
+ 1459  kubectl create -f ing.yaml 
+ 1460  kubectl get ing
+ 1461  kubectl delete -f ing.yaml 
+ 1462  cd kubernetes-ingress/
+ 1463  kubectl delete -f deployments/
+ 1464  kubectl delete -f deployments/deployment/
+ 1465  kubectl delete -f deployments/common/
+ 1466  kubectl delete -f deployments/rbac/
+ 1467  kubectl delete -f deployments/service/
+ 1468  kubectl delete -f deployments/common/
+ 1469  kubectl delete -f deployments/service/
+ 1470  kubectl delete -f deployments/common/
+ 1471  cd
+ 1472  vi ing.yaml 
+ 1473  kubectl create -f ing.yaml 
+ 1474  kubectl get ing
+ 1475  kubectl get svc -n kube-system 
+ 1476  vi ing.yaml 
+ 1477  kubectl delete -f ing.yaml 
+ 1478  vi ing.yaml 
+ 1479  kubectl create -f ing.yaml 
+ 1480  kubectl get ing
+ 1481  kubectl get svc 
+ 1482  vi ing.yaml 
+ 1483  kubectl get svc -n kube-system 
+ 1484  kubectl get svc 
+ 1485  kubectl get ing
+ 1486  vi ing.yaml 
+ 1487  kubectl cdele -f ing.yaml 
+ 1488  kubectl delete -f ing.yaml 
+ 1489  kubectl create -f ing.yaml 
+ 1490  kubectl get pod
+ 1491  kubectl get ing
+ 1492  kubectl describe ing aks-helloworld
+ 1493  kubectl get ing
+ 1494  kubectl describe ing aks-helloworld
+ 1495  kubectl get pod -o wide
+ 1496  kubectl describe ing aks-helloworld
+ 1497  kubectl delete -f ing.yaml 
+ 1498  vi ing.yaml 
+ 1499  kubectl create -f ing.yaml 
+ 1500  kubectl get pod
+ 1501  kubectl get ing
+ 1502  kubectl get pod
+ 1503  kubectl get ing
+ 1504  kubectl describe ing aks-helloworld
+ 1505  kubectl delete -f ing.yaml 
+ 1506  vi ing.yaml 
+ 1507  kubectl create -f ing.yaml 
+ 1508  kubectl get pod
+ 1509  kubectl get ing
+ 1510  kubectl describe ing aks-helloworld
+ 1511  ing.yaml 
+ 1512  vi ing.yaml 
+ 1513  kubectl get ing
+ 1514  vi dep.yaml
+ 1515  kubectl create -f dep.yaml 
+ 1516  kubectl get ing
+ 1517  vi dep.yaml
+ 1518  kubectl delete -f dep.yaml 
+ 1519  kubectl create -f dep.yaml 
+ 1520  kubectl get ing
+ 1521  vi dep.yaml 
+ 1522  kubectl delete -f dep.yaml 
+ 1523  kubectl create -f dep.yaml 
+ 1524  kubectl get ing
+ 1525  kubectl delete -f dep.yaml 
+ 1526  vi dep.yaml 
+ 1527  kubectl delete -f dep.yaml 
+ 1528  kubectl create -f dep.yaml 
+ 1529  kubectl get ing
+ 1530  vi dep.yaml 
+ 1531  kubectl delete -f dep.yaml 
+ 1532  vi dep.yaml 
+ 1533  kubectl create -f dep.yaml 
+ 1534  kubectl delete -f ing.yaml 
+ 1535  vi ing.yaml 
+ 1536  kubectl create -f ing.yaml 
+ 1537  kubectl get ing
+ 1538  vi ing.yaml 
+ 1539  vi dep.yaml 
+ 1540  vi ing.yaml 
+ 1541  kubectl create -f ing.yaml 
+ 1542  kubectl delete -f ing.yaml 
+ 1543  kubectl create -f ing.yaml 
+ 1544  kubectl get ing
+ 1545  kubectl get pod
+ 1546  kubectl describe ing aks-helloworld
+ 1547  kubectl describe ing dev-ing-app 
+ 1548  vi ing.yaml 
+ 1549  kubectl delete -f ing.yaml 
+ 1550  vi ing.yaml 
+ 1551  kubectl create -f ing.yaml 
+ 1552  kubectl delete -f ing.yaml 
+ 1553  vi ing.yaml 
+ 1554  kubectl create -f ing.yaml 
+ 1555  kubectl get pod
+ 1556  kubectl get ing
+ 1557  kubectl describe ing aks-helloworld
+ 1558  kubectl delete -f ing.yaml 
+ 1559  vi ing.yaml 
+ 1560  kubectl create -f ing.yaml 
+ 1561  kubectl describe ing aks-helloworld
+ 1562  kubectl describe ing aks-helloworld
+ 1563  kubectl delete -f ing.yaml 
+ 1564  vi ing.yaml 
+ 1565  kubectl create -f ing.yaml 
+ 1566  kubectl describe ing aks-helloworld
+ 1567  kubectl delete -f ing.yaml 
+ 1568  vi ing.yaml 
+ 1569  kubectl delete -f ing.yaml 
+ 1570  kubectl create -f ing.yaml 
+ 1571  kubectl describe ing aks-helloworld
+ 1572  kubectl delete -f ing.yaml 
+ 1573  vi ing.yaml 
+ 1574  kubectl create -f ing.yaml 
+ 1575  kubectl describe ing aks-helloworld
+ 1576  vi ing.yaml 
+ 1577  kubectl delete -f ing.yaml 
+ 1578  kubectl create -f ing.yaml 
+ 1579  kubectl get ing
+ 1580  kubectl describe ing aks-helloworld
+ 1581  vi ing.yaml 
+ 1582  kubectl delete -f ing.yaml 
+ 1583  kubectl create -f ing.yaml 
+ 1584  kubectl delete -f ing.yaml 
+ 1585  vi ing.yaml 
+ 1586  kubectl create -f ing.yaml 
+ 1587  vi dep.yaml 
+ 1588  kubectl delete -f dep.yaml 
+ 1589  vi dep.yaml 
+ 1590  vi ing.yaml 
+ 1591  kubectl get 
+ 1592  vi ing.yaml 
+ 1593  vi dep.yaml 
+ 1594  vi ing.yaml 
+ 1595  kubectl delete -f dep.yaml 
+ 1596  kubectl delete -f ing.yaml 
+ 1597  kubectl create -f ing.yaml 
+ 1598  ls
+ 1599  cd myapp/
+ 1600  kubectl delete -f ../dep.yaml 
+ 1601  kubectl delete -f ../ing.yaml 
+ 1602  kubectl get pod
+ 1603  cd
+ 1604  vi dep.yaml 
+ 1605  kubectl create -f dep.yaml 
+ 1606  kubectl get pod
+ 1607  kubectl get svc
+ 1608  kubectl get ingress
+ 1609  kubectl delete -f dep.yaml 
+ 1610  vi dep.yaml 
+ 1611  kubectl create -f dep.yaml 
+ 1612  kubectl get ingress
+ 1613  kubectl describe ingress dev-ing-app 
+ 1614  kubectl get pod -o wide
+ 1615  kubectl delete -f dep.yaml 
+ 1616  vi dep.yaml 
+ 1617  kubectl create -f dep.yaml 
+ 1618  kubectl get ing
+ 1619  kubectl delete -f dep.yaml 
+ 1620  vi dep.yaml 
+ 1621  kubectl create -f dep.yaml 
+ 1622  vi dep.yaml 
+ 1623  cd myapp/
+ 1624  vi dep.yaml 
+ 1625  vi ingress.yaml 
+ 1626  mv ingress.yaml ingress-not-working.yaml 
+ 1627  cd 
+ 1628  mv dep.yaml ingress.yaml
+ 1629  cp ingress.yaml myapp/
+ 1630  cd myapp/
+ 1631  ls
+ 1632  p ingress-not-working.yaml /home/aneesh/
+ 1633  cp ingress-not-working.yaml /home/aneesh/
+ 1634  vi ingress.yaml 
+ 1635  vi ingress-on-prem.yaml
+ 1636  vi pod.yaml 
+ 1637  mkdir health
+ 1638  cd health/
+ 1639  cp ../deployment.yaml .
+ 1640  vi deployment.yaml 
+ 1641  mv deployment.yaml liv-exec.yaml
+ 1642  kubectl create -f liv-exec.yaml 
+ 1643  kubectl get pod
+ 1644  kubectl describe po mydep-liv-exec-6c777fc689-hqwmb
+ 1645  kubectl get pod
+ 1646  kubectl describe po mydep-liv-exec-6c777fc689-hqwmb
+ 1647  kubectl delete -f liv-exec.yaml 
+ 1648  vi liv-exec.yaml 
+ 1649  kubectl create -f liv-exec.yaml 
+ 1650  kubectl get pod
+ 1651  kubectl describe po mydep-liv-exec-7b9667fcd9-7lf5j 
+ 1652  kubectl get pod
+ 1653  kubectl delete -f ../ingress.yaml 
+ 1654  kubectl get pod
+ 1655  vi liv-exec.yaml 
+ 1656  kubectl get rs
+ 1657  kubectl delete -f liv-exec.yaml 
+ 1658  cp liv-exec.yaml liv-http.yaml
+ 1659  vi liv-http.yaml 
+ 1660  kubectl create -f liv-http.yaml 
+ 1661  kubectl get pod
+ 1662  kubectl describe pod mydep-liv-exec-b999878dc-g8xqb 
+ 1663  kubectl delete -f liv-exec.yaml 
+ 1664  vi liv-http.yaml 
+ 1665  kubectl create -f liv-http.yaml 
+ 1666  kubectl get pod
+ 1667  kubectl describe pod mydep-liv-exec-74766f49ff-49kz8 
+ 1668  kubectl delete -f liv-http.yaml 
+ 1669  kubectl get pod
+ 1670  cp liv-http.yaml liv-tcp.yaml
+ 1671  vi liv-tcp.yaml 
+ 1672  kubectl create -f liv-tcp.yaml 
+ 1673  kubectl get pod
+ 1674  kubectl describe pod mydep-liv-exec-758b5969f7-kfd5q 
+ 1675  Q!
+ 1676  kubectl delete -f liv-tcp.yaml 
+ 1677  vi liv-tcp.yaml 
+ 1678  kubectl create -f liv-
+ 1679  kubectl create -f liv-tcp.yaml 
+ 1680  kubectl get pod
+ 1681  kubectl describe pod mydep-liv-exec-599bdfc948-4jwfd 
+ 1682  kubectl delete -f liv-tcp.yaml 
+ 1683  vi ../pod.yaml 
+ 1684  vi liv-tcp.yaml 
+ 1685  kubectl get svc
+ 1686  kubectl create -f liv-tcp.yaml 
+ 1687  kubectl get pod
+ 1688  kubectl describe svc mypod-svc 
+ 1689  kubectl get pod -o wide
+ 1690  kubectl delete -f liv-tcp.yaml 
+ 1691  vi liv-tcp.yaml 
+ 1692  kubectl create -f liv-tcp.yaml 
+ 1693  kubectl get pod
+ 1694  kubectl get svc
+ 1695  kubectl describe po mydep-liv-exec-645f4cbd77-2k25d 
+ 1696  kubectl describe svc mypod-svc 
+ 1697  kubectl delete -f liv-tcp.yaml 
+ 1698  vi liv-tcp.yaml 
+ 1699  kubectl create -f liv-tcp.yaml 
+ 1700  kubectl get pod
+ 1701  kubectl describe pod mydep-liv-exec-64bfd7c4fc-bt6w6 
+ 1702  kubectl create -f liv-tcp.yaml 
+ 1703  kubectl delete -f liv-tcp.yaml 
+ 1704  vi liv-tcp.yaml 
+ 1705  kubectl create -f liv-tcp.yaml 
+ 1706  kubectl get pod 
+ 1707  kubectl describe pod mydep-liv-exec-6ddd46b5c-2x978 
+ 1708  kubectl describe svc mypod-svc 
+ 1709  kubectl get pod -o wide
+ 1710  kubectl describe svc mypod-svc 
+ 1711  kubectl get pod 
+ 1712  kubectl describe svc mypod-svc 
+ 1713  cd ..
+ 1714  git add .
+ 1715  git commit -m "health check"
+ 1716  git push origin main 
+ 1717  mkdir configmap
+ 1718  cd configmap/
+ 1719  cd ..
+ 1720  ls
+ 1721  cd configmap/
+ 1722  cp ../wp/* .
+ 1723  ls
+ 1724  vi wordpress.yaml 
+ 1725  vi mysql.yml 
+ 1726  vi wordpress.yaml 
+ 1727  kubectl create configmap mywp --from-literal WORDPRESS_DB_HOST=mysql-svc --from-literal WORDPRESS_DB_USER=root --from-literal WORDPRESS_DB_PASSWORD=test123 --from-literal WORDPRESS_DB_NAME=wordpress --from-literal WORDPRESS_TABLE_PREFIX=wp_ --dry-run=client -o yaml
+ 1728  kubectl create configmap mywp --from-literal WORDPRESS_DB_HOST=mysql-svc --from-literal WORDPRESS_DB_USER=root --from-literal WORDPRESS_DB_PASSWORD=test123 --from-literal WORDPRESS_DB_NAME=wordpress --from-literal WORDPRESS_TABLE_PREFIX=wp_ --dry-run=client -o yaml > wpenv.yaml
+ 1729  vi wpenv.yaml 
+ 1730  kubectl create -f wpenv.yaml 
+ 1731  kubectl get configmaps 
+ 1732  kubectl describe configmaps mywp 
+ 1733  kubectl get configmaps mywp -o yaml
+ 1734  vi wordpress.yaml 
+ 1735  kubectl get configmaps 
+ 1736  vi wordpress.yaml 
+ 1737  kubectl create -f wordpress.yaml 
+ 1738  kubectl get pod
+ 1739  kubectl delete -f ../health/liv-tcp.yaml 
+ 1740  kubectl get pod
+ 1741  kubectl describe po wordpress 
+ 1742  kubectl get pod
+ 1743  kubectl exec -it wordpress -- bahs
+ 1744  kubectl exec -it wordpress -- bash
+ 1745  cp wordpress.yaml dep.yaml
+ 1746  vi dep.yaml 
+ 1747  kubectl delete -f wordpress.yaml 
+ 1748  vi dep.yaml 
+ 1749  kubectl create -f dep.yaml 
+ 1750  kubectl get pod
+ 1751  kubectl get svc
+ 1752* vi dep.yaml
+ 1753  kubectl get pod
+ 1754  kubectl exec -it cmap-app -- bash
+ 1755  vi index.html
+ 1756  kubectl create configmap myfile --from-file index.html --dry-run=client -o yaml
+ 1757  kubectl create configmap myfile --from-file index.html 
+ 1758  kubectl get cm
+ 1759  kubectl describe cm myfile
+ 1760  kubectl get cm myfile -o yaml
+ 1761  kubectl get cm
+ 1762  kubectl delete -f dep.yaml 
+ 1763  vi dep.yaml 
+ 1764  kubectl create -f dep.yaml 
+ 1765  kubectl get pod
+ 1766* kubectl describe po cmap-app
+ 1767  kubectl get svc
+ 1768  kubectl get pod
+ 1769  vi dep.yaml 
+ 1770  kubectl exec -it cmap-app -- bash
+ 1771  cd ..
+ 1772  vi gitt.sh
+ 1773  chmod + gitt.sh 
+ 1774  chmod +x gitt.sh 
+ 1775  ./gitt.sh "confgmap"
+ 1776  kubectl get pod
+ 1777  ls
+ 1778  dc configmap/
+ 1779  cd configmap/
+ 1780  ls
+ 1781  mv dep.yaml configmap-vol.yaml
+ 1782  cd ..
+ 1783  mkdir secret 
+ 1784  cd secret/
+ 1785  kubectl get pod
+ 1786  kubectl delete -f ../configmap/configmap-vol.yaml 
+ 1787  cp ../wp/* .
+ 1788  ls
+ 1789  vi mysql.yml 
+ 1790  kubectl create secret generic mypass --from-literal pass=test123 --dry-run=cliet -o yaml
+ 1791  kubectl create secret generic mypass --from-literal pass=test123 --dry-run=client -o yaml
+ 1792  kubectl create secret generic mypass --from-literal pass=test123 --dry-run=client -o yaml > pass.yaml
+ 1793  vi pass.yaml 
+ 1794  echo "dGVzdDEyMw==" | base64 -d
+ 1795  echo "hello" | base64 
+ 1796  echo "aGVsbG8K" | base64 -d
+ 1797  kubectl create -f pass.yaml 
+ 1798  kubectl get secrets 
+ 1799  kubectl describe secrets mypass 
+ 1800  kubectl get secrets mypass -o yaml
+ 1801  vi mysql.yml 
+ 1802  kubectl create -f wordpress.yaml 
+ 1803  kubectl create -f mysql.yml 
+ 1804  kubectl get pod
+ 1805  kubectl describe po mydb-pod 
+ 1806  kubectl get pod
+ 1807  kubectl get svc
+ 1808  vi test.cert
+ 1809  kubectl create secret generic secfile --from-file test.cert 
+ 1810  kubectl get secrets 
+ 1811  kubectl describe secrets secfile 
+ 1812  kubectl get  secrets secfile -o yaml
+ 1813  echo "aGVsbG8gdGhpcyBpcyBmaWxlIAo=" | base64 -d
+ 1814  cp wordpress.yaml sec-vol.yaml
+ 1815  vi sec-vol.yaml 
+ 1816  kubectl create -f sec-vol.yaml 
+ 1817  vi sec-vol.yaml 
+ 1818  kubectl create -f sec-vol.yaml 
+ 1819  kubectl delete -f sec-vol.yaml 
+ 1820  kubectl create -f sec-vol.yaml 
+ 1821  kubectl get pod
+ 1822  kubectl exec -it wordpress -- bash
+ 1823  cd ..
+ 1824  history > cmd-22-9-22.txt
